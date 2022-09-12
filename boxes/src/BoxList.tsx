@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Box from "./Box";
 import NewBoxForm from "./NewBoxForm";
+import { BoxListInterface } from "./Interfaces"
 
 /** Manage list of boxes
  *
@@ -9,10 +10,13 @@ import NewBoxForm from "./NewBoxForm";
  */
 
 function BoxList() {
-  const [boxes, setBoxes] = useState([])
+  // strings can be perceived as numbers if it is like "5" for example
+  
+  const [boxes, setBoxes] = useState<BoxListInterface[]>([])
 
   /** add box with given { id, width, height, backgroundColor } */
-  function add(newBox) {
+  function add(newBox: BoxListInterface) {
+    console.log('value', typeof newBox.width)
     setBoxes(boxes => [...boxes, newBox]);
   }
 

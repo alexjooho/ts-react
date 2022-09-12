@@ -1,3 +1,6 @@
+import React from "react";
+import { BoxPropsInterface } from "./Interfaces";
+
 /** Colored box presentation
  *
  * Props:
@@ -10,10 +13,10 @@
  * BoxList -> Box
  */
 
-function Box({ id, width = 5, height = 5, backgroundColor, remove }) {
+function Box({ id, width = 5, height = 5, backgroundColor, remove }: BoxPropsInterface) {
 
   /** Remove a box. */
-  function handleRemove() {
+  function handleRemove(evt: React.MouseEvent<HTMLButtonElement>) {
     remove(id);
   }
 
